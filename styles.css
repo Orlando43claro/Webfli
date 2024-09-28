@@ -46,14 +46,19 @@ nav ul li:hover {
     color: #e50914;
 }
 
+.4px 8px rgba(0, 0, 0, 0.5);
+}
+
 .video-container {
     position: relative;
-    width: 800px;
+    width: 100%; /* Ahora el reproductor ocupará el 100% del ancho de su contenedor */
+    max-width: 800px; /* Ancho máximo para pantallas grandes */
     margin: auto;
 }
 
 video {
-    width: 100%;
+    width: 100%; /* El video ahora se ajustará al 100% del contenedor */
+    height: auto; /* La altura se ajustará automáticamente según el ancho */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
@@ -62,6 +67,7 @@ video {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    flex-wrap: wrap; /* Permite que los controles se acomoden en una nueva línea en pantallas pequeñas */
 }
 
 button {
@@ -71,11 +77,13 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    flex: 1; /* Hacer que los botones se ajusten en pantallas pequeñas */
+    margin: 5px;
 }
 
 input[type="range"] {
-    width: 200px;
-    margin: 0 10px;
+    width: 100%; /* La barra de volumen se ajustará al ancho disponible */
+    margin: 10px 0;
 }
 
 
@@ -198,5 +206,26 @@ footer {
     .item {
         min-width: 120px;
         height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-container {
+        width: 100%; /* El contenedor ocupará todo el ancho disponible */
+        padding: 0 10px; /* Añadir un poco de margen a los lados en pantallas pequeñas */
+    }
+
+    .video-controls {
+        flex-direction: column; /* Los controles se apilarán verticalmente */
+        align-items: stretch; /* Se estirarán para ocupar todo el ancho disponible */
+    }
+
+    button {
+        width: 100%; /* Los botones se ajustarán al 100% del ancho del contenedor en pantallas pequeñas */
+        margin: 5px 0; /* Espaciado entre botones */
+    }
+
+    input[type="range"] {
+        width: 100%; /* Asegurar que el control de volumen se ajuste al tamaño */
     }
 }
