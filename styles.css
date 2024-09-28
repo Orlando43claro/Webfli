@@ -46,6 +46,39 @@ nav ul li:hover {
     color: #e50914;
 }
 
+.video-container {
+    position: relative;
+    width: 800px;
+    margin: auto;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.video-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin: 0 10px;
+}
+
+
 /* Hero Section */
 .hero {
     background-image: url('hero-background.jpg');
